@@ -87,7 +87,7 @@ p{ color: #8b8b8b;}
 /********************************************************** 2. Header ***************************************************************/
 
 header{
-  background-color: #3f51b5;
+  background-color: #9f1117;
   height: 240px;
   width: 100%;
   transition-duration: 0.8s;
@@ -109,7 +109,7 @@ header.header-fix{
 header.header-fix .nav-wrapper.menu-category a{ color: #444; padding: 0 30px;}
 header.header-fix .header-top{ height: 70px; line-height: 60px;  }
 .header-top {
-  background-color: #2f3e9b;
+  background-color: #9f1117;
   height: 90px;
   line-height: 80px;
   transition-duration: 0.8s;
@@ -117,7 +117,7 @@ header.header-fix .header-top{ height: 70px; line-height: 60px;  }
   -ms-transition-duration: 0.8s;
   -pie-transition-duration: 0.8s;
 }
-header.header-fix .header-top{ background-color: #3f51b5; }
+header.header-fix .header-top{ background-color: #9f1117; }
 nav{
   background-color: transparent;
   box-shadow: none;
@@ -232,14 +232,14 @@ nav .button-collapse i{ font-size: 2.1rem; }
 }
 .button-collapse.show-on-large { float: left; }
 .header-dropdown { float: left;  margin-left: 30px;  }
-.button-collapse .mdi-navigation-menu { color: #95a2e7; font-size: 30px; transition-duration: 0.3s; }
+.button-collapse .mdi-navigation-menu { color: #fff; font-size: 30px; transition-duration: 0.3s; }
 .button-collapse .mdi-navigation-menu:hover{ color: #fff; transition-duration: 0.3s;}
 .header-dropdown .dropdown-button.btn{ background: transparent; box-shadow: none;
   border: medium none;
   display: initial;
   font-size: 18px;
   text-align: center;
-  color: #95a2e7;
+  color: #fff;
   margin: 0;
   text-transform: capitalize;
   transition-duration: 0.3s;
@@ -323,7 +323,7 @@ nav .button-collapse i{ font-size: 2.1rem; }
 .searchbox.cart{ right: 60px;}
 .header-fix .searchbox{ margin: 10px  0 0 0; }
 .searchbox-open{ width:250px; background: #fff; }
-.login { color: #95a2e7; font-size: 18px; margin-right: 100px; padding-top: 3px; transition-duration: 0.3s;}
+.login { color: #fff; font-size: 18px; margin-right: 100px; padding-top: 3px; transition-duration: 0.3s;}
 .login:hover{ color: #fff; transition-duration: 0.3s; }
 .search.cart{ right: 80px;}
 
@@ -461,10 +461,10 @@ li.logo-title {
 
 /*********************************************************** 3. Footer *****************************************************************/
 
-footer.page-footer { margin: 0; background-color:#3f51b5; padding-top: 0;}
+footer.page-footer { margin: 0; background-color:#fff; padding-top: 0;}
 footer.page-footer .footer-copyright{
-  background-color: #313fa0;
-  color: #95a2e7;
+  background-color: #9C121D;
+  color: #fff;
   font-size: 14px;
   font-weight: 400;
   height: 90px;
@@ -511,7 +511,7 @@ footer.page-footer .footer-copyright{
 .page-footer ul:nth-child(6){ border-top: 4px solid #1bc9c8}
 .page-footer ul:nth-child(7){ border-top: 4px solid #767676}
 .page-footer ul:nth-child(8){ border-top: 4px solid #fdc510}
-.page-footer li a { color: #95a2e7; display: inline-block; padding: 5px 0;}
+.page-footer li a { color: #fff; display: inline-block; padding: 5px 0;}
 .page-footer li a:hover{ color: #fff;  }
 .footer-title { color: #fff; font-size: 17px; margin:0 0 15px 0; line-height: normal; }
 .page-footer .brand-logo{ display: inline-block; padding-bottom: 5px; margin-top: 25px;}

@@ -54,7 +54,11 @@
 
 /**************************************************** 1. General Style **************************************************************/
 
-body{ background-color: #eaeaea; font-size: 14px; }
+body{
+  background-color: #9d141d;
+  background: #9d141d url(../images/background.jpg) top center no-repeat fixed;
+  font-size: 14px;
+}
 a:focus { outline: none; }
 .container { width: 100%; }
 .wrapper{
@@ -88,7 +92,7 @@ p{ color: #8b8b8b;}
 
 header{
   background-color: #9f1117;
-  height: 240px;
+  height: 150px;
   width: 100%;
   transition-duration: 0.8s;
   -webkit-transition-duration: 0.8s;
@@ -96,7 +100,7 @@ header{
   -pie-transition-duration: 0.8s;
 }
 header.header-fix{
-  height: 125px;
+  height: 90px;
   background-color: #fff;
   z-index: 997;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
@@ -516,7 +520,8 @@ footer.page-footer .footer-copyright{
 .footer-title { color: #fff; font-size: 17px; margin:0 0 15px 0; line-height: normal; }
 .page-footer .brand-logo{ display: inline-block; padding-bottom: 5px; margin-top: 25px;}
 .social-icon .fa {
-  color: #fb7ea8;
+  margin: auto;
+  color: #fff;
   font-size: 20px;
   line-height: 5;
   padding: 0 10px;
@@ -531,6 +536,9 @@ footer.page-footer .footer-copyright{
   -webkit-transition-duration: 0.3s;
   -ms-transition-duration: 0.3s;
   -pie-transition-duration: 0.3s;
+}
+.social-icon {
+  text-align: center;
 }
 .footer-menu > ul { margin: 0; width: 100%; text-align: right; padding: 0; border: none !important; }
 .footer-menu li{ display: inline-block; }
@@ -619,12 +627,19 @@ ul.pgwSlider > li span, .pgwSlider > .ps-list > li span
 /******************* 4.4 blockquote ************************/
 
 .blockquote {
-  background: url("../images/blockquote-bg.jpg");
+  background: url("../images/back_ribbon.jpg") no-repeat fixed;
+  background-size: cover;
   color: #fff;
-  font-size: 18px;
-  padding: 25px 40px;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 50px 40px;
 }
 .blockquote > span { font-weight: 500; text-transform: uppercase; }
+.blockquote-inside{
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  color:black;
+}
 
 /************************ 4.5 News Blog **********************/
 

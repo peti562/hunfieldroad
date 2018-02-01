@@ -12,3 +12,9 @@
 */
 
 Route::get('/', 'IndexController@index');
+
+Route::get('/posts/{post}', 'PostsController@show');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

@@ -13,7 +13,7 @@
             touchControls : true,
             verticalCentering : false,
             adaptiveHeight : false,
-            maxHeight : 540,
+            maxHeight : 400,
             beforeSlide : null,
             afterSlide : null,
             adaptiveDuration : 500,
@@ -217,6 +217,7 @@
 
             }, 100);
 
+            height = pgwSlider.config.maxHeight;
             return true;
         };
 

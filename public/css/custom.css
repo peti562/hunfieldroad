@@ -3,3 +3,80 @@
     font-size: 30px;
     font-weight: 600;
 }
+
+.position {
+    display: inline-block;
+    float: left;
+    width: 5%;
+    text-align: center;
+}
+.tableTeam {
+    display: inline-block;
+    width: 40%;
+    text-align: left;
+    float:left;
+    margin-left:5%;
+}
+.played {
+    display: inline-block;
+    width: 6%;
+    margin-right:8%;
+    float: right;
+    text-align: center;
+}
+.goaldifference {
+    display: inline-block;
+    float: right;
+    width: 5%;
+    margin-right:8%;
+    text-align: center;
+}
+
+.points {
+    display: inline-block;
+    float: right;
+    width: 6%;
+}
+
+.mini-table-row{
+    height: 40px;
+    padding: 0 5%;
+}
+
+.mini-table-row:hover{
+    background-color: #eee;
+    cursor: default;
+}
+
+
+.crest {
+    display: inline-block;
+    float: left;
+    width: 10%;
+    text-align: center;
+    margin-left: 4%;
+}
+
+.crest-inner{
+    margin:auto;
+    padding-top:4px;
+}
+
+.mini-table-column {
+    height:40px;
+    vertical-align: middle;
+    line-height: 40px;
+}
+.post-body img{
+    width:100%;
+    margin: 20px 0;
+}
+
+.newsHover:hover{
+    background-color: #eee;
+}
+
+.news-title{
+    font-size: 16px;
+    font-weight: 600;
+}

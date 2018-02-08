@@ -41,12 +41,19 @@
 .mini-table-row{
     height: 40px;
     padding: 0 5%;
+    width:100%;
+    border-bottom: 1px solid #ddd;
 }
 
 .mini-table-row:hover{
     background-color: #eee;
     cursor: default;
 }
+
+.liverpool{
+    color:#9C121D;
+}
+
 
 
 .crest {
@@ -74,9 +81,18 @@
 
 .newsHover:hover{
     background-color: #eee;
+    cursor:default;
 }
 
 .news-title{
     font-size: 16px;
     font-weight: 600;
+}
+
+.quote-author{
+    padding-right: 20px;
+    text-align: right;
+    width: 100%;
+    font-style: italic;
+    color: #7c0006;
 }

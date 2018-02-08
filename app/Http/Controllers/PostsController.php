@@ -13,4 +13,5 @@ class PostsController extends Controller
     return view('layouts.home.show', compact('post'));
   }
 
+
 }

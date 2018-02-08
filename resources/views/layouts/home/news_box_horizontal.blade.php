@@ -1,5 +1,5 @@
 <div class="row">
-    @foreach($recentPosts as $recentPost)
+    @foreach($recentPosts->take(4) as $recentPost)
 
     <div class="col l6 col m12 col s12 ">
         <div class="z-depth-1 ">
@@ -22,7 +22,7 @@
                             <i class="fa fa-clock-o"></i> {{$recentPost->created_at->diffForHumans()}}
                         </div>
                         <div class="news-title"> {{$recentPost->title}}</div>
-                        <div class="news-content"><p>et bibendum leo metus vel magna. In dapibus ac tellus non rutrum. Integer ut nisi risus. Mauris bibendum semper quam.</p></div>
+                        <div class="news-content"><p>{{$recentPost->excerpt}}</p></div>
                     </div>
                 </div>
             </div>

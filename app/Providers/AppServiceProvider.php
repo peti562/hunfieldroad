@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Post;
+use App\Quote;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,15 +18,16 @@ class AppServiceProvider extends ServiceProvider
       view()->composer('partials.recent-posts', function($view) {
         $view->with('recentPosts', Post::recentFive());
       });
-      view()->composer('layouts.home.news_box_horizontal', function($view) {
-        $view->with('recentPosts', Post::afterSlider(3,4));
-      });
-      view()->composer('layouts.home.news_box_vertical', function($view) {
-        $view->with('recentPosts', Post::afterSlider(7,4));
+      view()->composer('layouts.home.main-page', function($view) {
+        $view->with('recentPosts', Post::afterSlider(3,20));
       });
       view()->composer('layouts.home.news_slider', function($view) {
         $view->with('recentPosts', Post::recents());
       });
+      view()->composer('partials.random-quotes', function($view) {
+        $view->with('quote', Quote::inRandomOrder()->first());
+      });
+
     }
 
     /**

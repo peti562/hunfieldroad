@@ -9,8 +9,11 @@ function mainPageTable () {
             console.log(myData);
             $('#mini_table').empty();
             for (var i = 0; i < myData.length; i++) {
-                var newRow = '<div class="mini-table-row" style="width:100%;  border-bottom: 1px solid #ddd;">';
-                newRow+= '<div class="mini-table-column position">'+myData[i].position+'</div>';
+                var newRow = '<div class="mini-table-row ';
+                if(myData[i].teamName == "Liverpool FC") {
+                    newRow += ' liverpool ';
+                }
+                newRow+= '"><div class="mini-table-column position">'+myData[i].position+'</div>';
                 newRow+= '<div class="mini-table-column crest"><img class="crest-inner" style="max-height: 30px;" src="'+myData[i].crestURI+'"/></div>';
                 newRow+= '<div class="mini-table-column tableTeam">'+teamnames[myData[i].teamName]+'</div>';
                 newRow+= '<div class="mini-table-column points">'+myData[i].points+'</div>';

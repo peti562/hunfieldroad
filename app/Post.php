@@ -8,16 +8,6 @@ class Post extends Model
 {
     protected $guarded = [];
 
-  public function scopeAll($query)
-  {
-    return $query->get();
-  }
-
-  public function scopeFind($query, $id)
-  {
-    return $query->where('id', $id);
-  }
-
   public static function recentFive()
   {
     return static::orderBy('id', 'desc')->take(5)->get();

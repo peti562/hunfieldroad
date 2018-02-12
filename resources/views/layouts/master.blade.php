@@ -4,8 +4,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>Hunfield Road</title>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Peter Makadi">
+    <meta name="description" content="{{isset($post->meta_description) ? $post->meta_description : ''}}">
+    <meta name="keywords" content="{{isset($post->meta_keywords) ? $post->meta_keywords : ''}}">
+    <title>{{isset($post->title) ? $post->title : 'Hunfield Road'}}</title>
     <!-- Materialize CSS  -->
     <link href="{{asset('css/materialize.css')}}" type="text/css" rel="stylesheet">
 

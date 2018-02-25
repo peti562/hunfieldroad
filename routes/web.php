@@ -20,3 +20,9 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/randomQuote', 'QuoteController@show');
+
+Route::get('/fbtest', 'IndexController@fbsend');
+
+Route::get('/try', 'PageController@compare');
+
+Route::get('/comparing', 'PageController@compareWithTeams');

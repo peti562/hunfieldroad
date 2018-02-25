@@ -9,7 +9,6 @@ class PostsController extends Controller
 
   public function show(Post $post)
   {
-
     return view('layouts.home.show', compact('post'));
   }
 

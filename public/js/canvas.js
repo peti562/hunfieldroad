@@ -1,7 +1,7 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-var m = 1;
+var multiply = 1;
 
 var settings = {
     bgcolor: '#8a1717',
@@ -13,13 +13,33 @@ var settings = {
 };
 
 
-function drawBlock(color){
+var block = {
+    a: {
+        x:0,
+        y:448
+    },
+    b: {
+        x:1000,
+        y:336
+    },
+    c: {
+        x:1000,
+        y:700
+    },
+    d: {
+        x:0,
+        y:700
+    },
+    color: '#8a1717'
+    };
+
+function draw(obj){
     context.beginPath();
-    context.moveTo(0, 448);
-    context.lineTo(1000, 336);
-    context.lineTo(1000, 700);
-    context.lineTo(0, 700);
-    context.fillStyle = color;
+    context.moveTo((obj.a.x*multiply), obj.a.y*multiply);
+    context.lineTo((obj.b.x*multiply), obj.b.y*multiply);
+    context.lineTo(obj.c.x*multiply, obj.c.y*multiply);
+    context.lineTo(obj.d.x*multiply, obj.d.y*multiply);
+    context.fillStyle = block.color;
     context.fill();
 }
 
@@ -55,7 +75,7 @@ function drawBigRibbon(color){
 
 
 
-drawBlock(settings.bgcolor);
+draw(block);
 drawLineAbove(settings.lineabove);
 drawMiniRibbon(settings.ribbon);
 

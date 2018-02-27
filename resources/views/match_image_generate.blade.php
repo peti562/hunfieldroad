@@ -44,7 +44,7 @@
             <button type="submit"> Submit</button>
         </form>--}}
         <div class="col l12 col m12">
-            <canvas height="500" width="700" id="canvas"></canvas>
+            <canvas height="700" width="1000" id="canvas"></canvas>
         </div>
     </div>
 

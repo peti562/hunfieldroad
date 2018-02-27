@@ -12,6 +12,16 @@ var settings = {
     result: '#ffffff'
 };
 
+function draw(obj){
+    context.beginPath();
+    context.moveTo((obj.a.x*multiply), obj.a.y*multiply);
+    context.lineTo((obj.b.x*multiply), obj.b.y*multiply);
+    context.lineTo(obj.c.x*multiply, obj.c.y*multiply);
+    context.lineTo(obj.d.x*multiply, obj.d.y*multiply);
+    context.fillStyle = block.color;
+    context.fill();
+}
+
 
 var block = {
     a: {
@@ -33,35 +43,46 @@ var block = {
     color: '#8a1717'
     };
 
-function draw(obj){
-    context.beginPath();
-    context.moveTo((obj.a.x*multiply), obj.a.y*multiply);
-    context.lineTo((obj.b.x*multiply), obj.b.y*multiply);
-    context.lineTo(obj.c.x*multiply, obj.c.y*multiply);
-    context.lineTo(obj.d.x*multiply, obj.d.y*multiply);
-    context.fillStyle = block.color;
-    context.fill();
-}
+var lineabove = {
+    a: {
+        x:0,
+        y:441
+    },
+    b: {
+        x:1000,
+        y:329
+    },
+    c: {
+        x:1000,
+        y:346
+    },
+    d: {
+        x:0,
+        y:458
+    },
+    color: '#ffffff'
+};
 
-function drawLineAbove(color){
-    context.beginPath();
-    context.moveTo(0, 441);
-    context.lineTo(1000, 329);
-    context.lineTo(1000, 346);
-    context.lineTo(0, 458);
-    context.fillStyle = color;
-    context.fill();
-}
+var miniribbon = {
+    a: {
+        x:0,
+        y:463
+    },
+    b: {
+        x:285,
+        y:431
+    },
+    c: {
+        x:285,
+        y:435
+    },
+    d: {
+        x:0,
+        y:467
+    },
+    color: '#ffe400'
+};
 
-function drawMiniRibbon(color){
-    context.beginPath();
-    context.moveTo(0, 463);
-    context.lineTo(285, 431);
-    context.lineTo(285, 435);
-    context.lineTo(0, 467);
-    context.fillStyle = color;
-    context.fill();
-}
 
 function drawBigRibbon(color){
     context.beginPath();
@@ -76,6 +97,8 @@ function drawBigRibbon(color){
 
 
 draw(block);
+draw(lineabove);
+draw(miniribbon);
 drawLineAbove(settings.lineabove);
 drawMiniRibbon(settings.ribbon);
 

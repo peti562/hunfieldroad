@@ -101,3 +101,9 @@
     font-style: italic;
     color: #7c0006;
 }
+
+#canvas{
+    border: 1px solid black;
+    background: url('http://192.168.10.10/storage/generator/backgrounds/blank.jpg') no-repeat;
+    background-size: cover;
+}

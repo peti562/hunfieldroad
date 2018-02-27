@@ -49,6 +49,7 @@
 <script src="{{asset('js/jquery.liquid-slider.js')}}"></script>
 <script type='text/javascript' src="{{asset('js/camera.js')}}"></script>
 <script src="{{asset('js/minitable.js')}}"></script>
+<script src="{{asset('js/canvas.js')}}"></script>
 
 <!-- Custom Js -->
 <script src="{{asset('js/init.js')}}"></script>

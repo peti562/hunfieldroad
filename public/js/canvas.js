@@ -1,6 +1,22 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
+var data = {
+    background_image: 'http://192.168.10.10/storage/generator/backgrounds/blank.jpg',
+    home_goals: 2,
+    away_goals: 5,
+    home_crest: 'http://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg',
+    away_crest: 'http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg',
+    colors: {
+        block: '#8a1717',
+        lineabove: '#ffffff',
+        ribbon: '#ffe400',
+        result: '#ffffff',
+        ribbontext: '#000000',
+        social: '#ffffff',
+    }
+};
+
 var home_goals = 2;
 var away_goals = 5;
 var multiply = 1;
@@ -8,14 +24,14 @@ var crest_width = 130;
 var crest_y = 540;
 
 var home_crest = {
-    src: 'http://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg',
+    src: data.home_crest,
     x: 240,
     y: crest_y,
     width: crest_width
 };
 
 var away_crest = {
-    src: 'http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg',
+    src: data.away_crest,
     x: canvas.width-home_crest.x-crest_width,
     y: crest_y,
     width: crest_width
@@ -46,11 +62,19 @@ function addImage(obj) {
     img.onload = function() {
         var aspect_ratio = img.width / img.height;
         var newHeight = obj.width/aspect_ratio;
-        var newY = obj.y - (newHeight/2)
+        var newY = obj.y - (newHeight/2);
         context.drawImage(img, obj.x, newY, obj.width, newHeight);
     };
     img.src = obj.src;
 };
+
+function setBackground(source) {
+    var bkimg = new Image();
+    bkimg.onload = function() {
+        context.drawImage(bkimg, 0, 0, canvas.width, canvas.height);
+    };
+    bkimg.src = source;
+}
 
 
 var block = {
@@ -58,7 +82,7 @@ var block = {
     b: { x:1000, y:336 },
     c: { x:1000, y:700 },
     d: { x:0,    y:700 },
-    color: '#8a1717'
+    color: data.colors.block
 };
 
 var lineabove = {
@@ -66,7 +90,7 @@ var lineabove = {
     b: { x:1000, y:329 },
     c: { x:1000, y:346 },
     d: { x:0,    y:458 },
-    color: '#ffffff'
+    color: data.colors.lineabove
 };
 
 var miniribbon = {
@@ -74,7 +98,7 @@ var miniribbon = {
     b: { x:285, y:431 },
     c: { x:285, y:435 },
     d: { x:0,   y:467 },
-    color: '#ffe400'
+    color: data.colors.ribbon
 };
 
 var bigribbon = {
@@ -82,13 +106,13 @@ var bigribbon = {
     b: { x:1000,  y:295 },
     c: { x:1000,  y:375 },
     d: { x:510,   y:430 },
-    color: '#ffe400'
+    color: data.colors.ribbon
 };
 
 var ribbontext = {
     font: 'FFF English Premier League',
     font_size: '40',
-    color: 'black',
+    color: data.colors.ribbontext,
     transform: true,
     tdata: { a: 1, b: -0.11, c: 0.1, d: 1, e: 0, f: 0},
     text: 'VÉGEREDMÉNY',
@@ -98,7 +122,7 @@ var ribbontext = {
 var result = {
     font: 'FFF English Premier League',
     font_size: '100',
-    color: 'white',
+    color: data.colors.result,
     transform: false,
     tdata: { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0},
     text: home_goals+'-'+away_goals,
@@ -108,23 +132,27 @@ var result = {
 var social = {
     font: 'FFF English Premier League',
     font_size: '30',
-    color: 'white',
+    color: data.colors.social,
     transform: false,
     tdata: { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0},
     text: 'HUNFIELD ROAD',
-    pos: {x: 830, y: 40}
+    pos: {x: 153, y: 685}
 };
 
+setBackground(data.background_image);
+setTimeout(function() {
+    draw(block);
+    draw(lineabove);
+    draw(miniribbon);
+    draw(bigribbon);
+    write(ribbontext);
+    write(result);
+    write(social);
+    addImage(home_crest);
+    addImage(away_crest);
+},500);
 
-draw(block);
-draw(lineabove);
-draw(miniribbon);
-draw(bigribbon);
-write(ribbontext);
-write(result);
-write(social);
-addImage(home_crest);
-addImage(away_crest);
+
 
 
 

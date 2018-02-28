@@ -44,6 +44,7 @@
             <button type="submit"> Submit</button>
         </form>--}}
         <div class="col l12 col m12">
+            <span style="font-family: epl-font; visibility: hidden;">.</span>
             <canvas height="700" width="1000" id="canvas"></canvas>
         </div>
     </div>

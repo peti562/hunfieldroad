@@ -2,6 +2,8 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
 var multiply = 1;
+var home_goals = 2;
+var away_goals = 5;
 
 var settings = {
     bgcolor: '#8a1717',
@@ -73,14 +75,13 @@ var ribbontext = {
     pos: {x: 660, y: 462}
     };
 
-var social = {
+var result = {
     font: 'FFF English Premier League',
-    font_size: '40',
-    color: 'black',
-    transform: true,
-    tdata: { a: 1, b: -0.11, c: 0.1, d: 1, e: 0, f: 0},
-    text: 'VÉGEREDMÉNY',
-    pos: {x: 660, y: 462}
+    font_size: '100',
+    color: 'white',
+    tdata: { a: 1, b: 0.11, c: -0.1, d: 1, e: 0, f: 0},
+    text: home_goals+'-'+away_goals,
+    pos: {x: 500, y: 580}
 };
 
 
@@ -89,6 +90,7 @@ draw(lineabove);
 draw(miniribbon);
 draw(bigribbon);
 write(ribbontext);
+write(result);
 
 
 

@@ -1,18 +1,26 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-var multiply = 1;
 var home_goals = 2;
 var away_goals = 5;
+var multiply = 1;
+var crest_width = 130;
+var crest_y = 540;
 
-var settings = {
-    bgcolor: '#8a1717',
-    lineabove: '#ffffff',
-    ribbon: '#ffe400',
-    ribbon_text: '#000000',
-    social: '#ffffff',
-    result: '#ffffff'
+var home_crest = {
+    src: 'http://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg',
+    x: 240,
+    y: crest_y,
+    width: crest_width
 };
+
+var away_crest = {
+    src: 'http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg',
+    x: canvas.width-home_crest.x-crest_width,
+    y: crest_y,
+    width: crest_width
+};
+
 
 function draw(obj){
     context.beginPath();
@@ -31,6 +39,17 @@ function write(obj) {
     context.transform(obj.tdata.a, obj.tdata.b, obj.tdata.c, obj.tdata.d, obj.tdata.e, obj.tdata.f);
     context.fillText(obj.text, obj.pos.x, obj.pos.y);
     context.transform(obj.tdata.a, (obj.tdata.b*-1), (obj.tdata.c*-1), obj.tdata.d, obj.tdata.e, obj.tdata.f);
+};
+
+function addImage(obj) {
+    var img = new Image();
+    img.onload = function() {
+        var aspect_ratio = img.width / img.height;
+        var newHeight = obj.width/aspect_ratio;
+        var newY = obj.y - (newHeight/2)
+        context.drawImage(img, obj.x, newY, obj.width, newHeight);
+    };
+    img.src = obj.src;
 };
 
 
@@ -83,7 +102,7 @@ var result = {
     transform: false,
     tdata: { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0},
     text: home_goals+'-'+away_goals,
-    pos: {x: 500, y: 580}
+    pos: {x: 500, y: 590}
 };
 
 var social = {
@@ -104,6 +123,11 @@ draw(bigribbon);
 write(ribbontext);
 write(result);
 write(social);
+addImage(home_crest);
+addImage(away_crest);
+
+
+
 
 
 

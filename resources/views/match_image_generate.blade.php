@@ -10,7 +10,11 @@
                 <label for="home_team">Home Team</label>
                 <select name="home_team" id="home_team">
                     @foreach($clubs as $club)
-                        <option value="{{$club->TID}}" id="home_{{$club->FDCOUK}}">{{$club->FDCOUK}}</option>
+                        @if($club->TID == 64)
+                            <option value="{{$club->TID}}" id="away_{{$club->FDCOUK}}" selected="selected" data-content="{{$club->Logo_url}}">{{$club->FDCOUK}}</option>
+                        @else
+                            <option value="{{$club->TID}}" id="away_{{$club->FDCOUK}}" data-content="{{$club->Logo_url}}">{{$club->FDCOUK}}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
@@ -41,7 +45,7 @@
                 <input type="number" id="away_team_goals" name="away_team_goals"/>
             </div>
 
-        
+
 
             <div class="col l12 col m12">
                 <label for="competition">Versenysorozat</label>

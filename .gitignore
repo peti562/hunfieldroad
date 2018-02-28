@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/images/match_result_images
 /storage/*.key
 /vendor
 /.idea

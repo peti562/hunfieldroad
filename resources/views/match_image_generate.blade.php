@@ -2,25 +2,25 @@
 
 @section('main-content')
     <div class="row" style="background: white;">
-        {{--<form action="{{env('APP_URL')}}generator" method="GET">
+        <form action="{{env('APP_URL')}}generator" method="GET">
 
             <input type="hidden" id="competition" name="competition" value="epl"/>
 
-            --}}{{--<div class="col l12 col m12">
+            <div class="col l12 col m12">
                 <label for="home_team">Home Team</label>
                 <select name="home_team" id="home_team">
                     @foreach($clubs as $club)
                         <option value="{{$club->TID}}" id="home_{{$club->FDCOUK}}">{{$club->FDCOUK}}</option>
                     @endforeach
                 </select>
-            </div>--}}{{--
+            </div>
 
-            <div class="col l12 col m12">
+         {{--   <div class="col l12 col m12">
                 <label for="home_team">Home Team</label>
                 <select name="home_team" id="home_team">
                         <option value="64" id="home_Liverpool" data-content="http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg">Liverpool</option>
                 </select>
-            </div>
+            </div>--}}
 
             <div class="col l12 col m12">
                 <label for="away_team">Away Team</label>
@@ -42,11 +42,8 @@
             </div>
 
             <button type="submit"> Submit</button>
-        </form>--}}
-        <div class="col l12 col m12">
-            <span style="font-family: epl-font; visibility: hidden;">.</span>
-            <canvas height="700" width="1000" id="canvas"></canvas>
-        </div>
+        </form>
+
     </div>
 
 

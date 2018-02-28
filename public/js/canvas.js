@@ -1,24 +1,10 @@
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 
-var data = {
-    background_image: 'http://192.168.10.10/storage/generator/backgrounds/blank.jpg',
-    home_goals: 2,
-    away_goals: 5,
-    home_crest: 'http://upload.wikimedia.org/wikipedia/de/d/da/Manchester_United_FC.svg',
-    away_crest: 'http://upload.wikimedia.org/wikipedia/de/0/0a/FC_Liverpool.svg',
-    colors: {
-        block: '#8a1717',
-        lineabove: '#ffffff',
-        ribbon: '#ffe400',
-        result: '#ffffff',
-        ribbontext: '#000000',
-        social: '#ffffff',
-    }
-};
 
-var home_goals = 2;
-var away_goals = 5;
+
+var home_goals = data.home_goals;
+var away_goals = data.away_goals;
 var multiply = 1;
 var crest_width = 130;
 var crest_y = 540;

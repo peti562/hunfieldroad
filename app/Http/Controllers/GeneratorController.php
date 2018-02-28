@@ -13,9 +13,6 @@ class GeneratorController extends Controller
     return view('match_image_generate', compact('clubs'));
   }
 
-  public function crest($tid, Club $club){
-    return $club->teamCrest($tid)->pluck('Logo_url');
-  }
 
   public function generateResult(Club $club, Request $request)
   {
@@ -30,12 +27,20 @@ class GeneratorController extends Controller
       'away_team_crest' => $away_team_crest,
       'away_team_goals' => $request['away_team_goals'],
       'home_team_goals' => $request['home_team_goals'],
-      'graphic' => 'https://drive.google.com/file/d/1JzesY-OWGLy6_OR31vXLCNmOBVm82T74/view?usp=sharing',
+      'background_image' => 'http://192.168.10.10/storage/generator/backgrounds/blank.jpg',
+      'colors' => [
+        'block' => '#8a1717',
+        'lineabove' => '#ffffff',
+        'ribbon' => '#ffe400',
+        'result' => '#ffffff',
+        'ribbontext' => '#000000',
+        'social' => '#ffffff',
+      ]
       ];
     
 
 
-    return view('generated_result', compact('data'));
+    return view('match_image_output', compact('data'));
   }
 
 

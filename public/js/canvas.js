@@ -30,6 +30,7 @@ function write(obj) {
     context.fillStyle = obj.color;
     context.transform(obj.tdata.a, obj.tdata.b, obj.tdata.c, obj.tdata.d, obj.tdata.e, obj.tdata.f);
     context.fillText(obj.text, obj.pos.x, obj.pos.y);
+    context.transform(obj.tdata.a, (obj.tdata.b*-1), (obj.tdata.c*-1), obj.tdata.d, obj.tdata.e, obj.tdata.f);
 };
 
 
@@ -79,9 +80,20 @@ var result = {
     font: 'FFF English Premier League',
     font_size: '100',
     color: 'white',
-    tdata: { a: 1, b: 0.11, c: -0.1, d: 1, e: 0, f: 0},
+    transform: false,
+    tdata: { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0},
     text: home_goals+'-'+away_goals,
     pos: {x: 500, y: 580}
+};
+
+var social = {
+    font: 'FFF English Premier League',
+    font_size: '30',
+    color: 'white',
+    transform: false,
+    tdata: { a: 1, b: 0, c: 0, d: 1, e: 0, f: 0},
+    text: 'HUNFIELD ROAD',
+    pos: {x: 830, y: 40}
 };
 
 
@@ -91,6 +103,7 @@ draw(miniribbon);
 draw(bigribbon);
 write(ribbontext);
 write(result);
+write(social);
 
 
 

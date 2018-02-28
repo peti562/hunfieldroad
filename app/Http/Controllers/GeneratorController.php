@@ -16,6 +16,22 @@ class GeneratorController extends Controller
 
   public function generateResult(Club $club, Request $request)
   {
+    $this->validate($request, [
+      'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    $image = $request->file('background_image');
+
+    $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+
+    $destinationPath = public_path('/images/match_result_images');
+
+    $image->move($destinationPath, $input['imagename']);
+
+    $imageURL = url('images/match_result_images/'.$input['imagename']);
+
+
+
     $home_team_crest = $club->teamCrest($request['home_team'])->pluck('Logo_url')->first();
     $away_team_crest = $club->teamCrest($request['away_team'])->pluck('Logo_url')->first();
 
@@ -27,16 +43,30 @@ class GeneratorController extends Controller
       'away_team_crest' => $away_team_crest,
       'away_team_goals' => $request['away_team_goals'],
       'home_team_goals' => $request['home_team_goals'],
-      'background_image' => 'http://192.168.10.10/storage/generator/backgrounds/blank.jpg',
-      'colors' => [
+      'background_image' => $imageURL,
+      'ucl_image' => $request['competition']=='ucl' ? url('images/ucl.png') : '',
+      ];
+
+    if ($request['home_team']==64)
+    {
+      $data['colors'] = [
         'block' => '#8a1717',
         'lineabove' => '#ffffff',
         'ribbon' => '#ffe400',
         'result' => '#ffffff',
         'ribbontext' => '#000000',
         'social' => '#ffffff',
-      ]
       ];
+    } else if ($request['away_team']==64) {
+      $data['colors'] = [
+        'block' => '#373737',
+        'lineabove' => '#ffffff',
+        'ribbon' => '#FB673F',
+        'result' => '#FB673F',
+        'ribbontext' => '#000',
+        'social' => '#FB673F',
+      ];
+    }
     
 
 

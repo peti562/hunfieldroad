@@ -2,8 +2,8 @@
 
 @section('main-content')
     <div class="row" style="background: white;">
-        <form action="{{env('APP_URL')}}generator" method="GET">
-
+        {{Form::open(['route' => 'generator', 'files' => true])}}
+            {{ csrf_field() }}
             <input type="hidden" id="competition" name="competition" value="epl"/>
 
             <div class="col l12 col m12">
@@ -41,8 +41,21 @@
                 <input type="number" id="away_team_goals" name="away_team_goals"/>
             </div>
 
-            <button type="submit"> Submit</button>
-        </form>
+        
+
+            <div class="col l12 col m12">
+                <label for="competition">Versenysorozat</label>
+                <select name="competition" id="competition">
+                    <option value="epl" id="epl">Premier League</option>
+                    <option value="ucl" id="ucl">Bajnokok Ligája</option>
+                </select>
+            </div>
+
+
+            {{Form::label('background_image', 'Háttérkép',['class' => 'control-label'])}}
+            {{Form::file('background_image')}}
+            {{Form::submit('Uzsgyi!', ['class' => 'btn btn-danger'])}}
+        {{Form::close()}}
 
     </div>
 

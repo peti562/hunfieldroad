@@ -20,6 +20,7 @@
         away_goals: '{{$data['away_team_goals']}}',
         home_crest: '{{$data['home_team_crest']}}',
         away_crest: '{{$data['away_team_crest']}}',
+        ucl_image: '{{$data['ucl_image']}}',
         colors: {
             block: '{{$data['colors']['block']}}',
             lineabove: '{{$data['colors']['lineabove']}}',

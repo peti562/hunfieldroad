@@ -24,6 +24,14 @@ var away_crest = {
 };
 
 
+function extra(source) {
+    var bkimg = new Image();
+    bkimg.onload = function() {
+        context.drawImage(bkimg, 0, 420);
+    };
+    bkimg.src = source;
+}
+
 function draw(obj){
     context.beginPath();
     context.moveTo((obj.a.x*multiply), obj.a.y*multiply);
@@ -61,6 +69,7 @@ function setBackground(source) {
     };
     bkimg.src = source;
 }
+
 
 
 var block = {
@@ -128,23 +137,16 @@ var social = {
 setBackground(data.background_image);
 setTimeout(function() {
     draw(block);
+    extra(data.ucl_image);
     draw(lineabove);
     draw(miniribbon);
     draw(bigribbon);
     write(ribbontext);
-    write(result);
-    write(social);
-    addImage(home_crest);
-    addImage(away_crest);
-},500);
+    setTimeout(function() {
+        write(result);
+        write(social);
+        addImage(home_crest);
+        addImage(away_crest);
+    },100);
+},150);
 
-
-
-
-
-
-
-
-
-
-console.log(canvas);

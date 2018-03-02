@@ -65,6 +65,7 @@ function addImage(obj) {
 function setBackground(source) {
     var bkimg = new Image();
     bkimg.onload = function() {
+        context.globalCompositeOperation='destination-over';
         context.drawImage(bkimg, 0, 0, canvas.width, canvas.height);
     };
     bkimg.src = source;
@@ -134,16 +135,16 @@ var social = {
     pos: {x: 153, y: 685}
 };
 
+
+draw(block);
+extra(data.ucl_image);
+draw(lineabove);
+draw(miniribbon);
+draw(bigribbon);
+write(ribbontext);
+write(result);
+write(social);
+addImage(home_crest);
+addImage(away_crest);
+
 setBackground(data.background_image);
-    draw(block);
-    extra(data.ucl_image);
-    draw(lineabove);
-    draw(miniribbon);
-    draw(bigribbon);
-    write(ribbontext);
-
-        write(result);
-        write(social);
-        addImage(home_crest);
-        addImage(away_crest);
-

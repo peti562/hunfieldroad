@@ -147,6 +147,6 @@ addImage(home_crest);
 addImage(away_crest);
 
 setTimeout(function() {
-   // setBackground(data.background_image);
+   setBackground(data.background_image);
 },2000);
 

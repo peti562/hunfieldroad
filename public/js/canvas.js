@@ -135,17 +135,18 @@ var social = {
     pos: {x: 153, y: 685}
 };
 
-setBackground(data.background_image);
+draw(block);
+extra(data.ucl_image);
+draw(lineabove);
+draw(miniribbon);
+draw(bigribbon);
+write(ribbontext);
+write(result);
+write(social);
+addImage(home_crest);
+addImage(away_crest);
+
 setTimeout(function() {
-    draw(block);
-    extra(data.ucl_image);
-    draw(lineabove);
-    draw(miniribbon);
-    draw(bigribbon);
-    write(ribbontext);
-        write(result);
-        write(social);
-        addImage(home_crest);
-        addImage(away_crest);
+    setBackground(data.background_image);
 },2000);
 

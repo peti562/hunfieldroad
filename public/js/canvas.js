@@ -141,11 +141,9 @@ setBackground(data.background_image);
     draw(miniribbon);
     draw(bigribbon);
     write(ribbontext);
-    setTimeout(function() {
+
         write(result);
         write(social);
         addImage(home_crest);
         addImage(away_crest);
-
-},150);
 

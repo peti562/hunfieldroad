@@ -148,5 +148,5 @@ addImage(away_crest);
 
 setTimeout(function() {
    setBackground(data.background_image);
-},200);
+},50);
 

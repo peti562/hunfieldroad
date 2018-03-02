@@ -146,9 +146,9 @@ setTimeout(function() {
     write(social);
     addImage(home_crest);
     addImage(away_crest);
-},100);
+},200);
 
 setTimeout(function() {
    setBackground(data.background_image);
-},200);
+},250);
 

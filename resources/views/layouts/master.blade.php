@@ -34,6 +34,14 @@
     <![endif]-->
 </head>
 <body>
+<style>
+    @import url({{url('font/Premier_League_Font_2018.ttf')}});
+
+    @font-face {
+        font-family: epl-font;
+        src: url({{url('font/Premier_League_Font_2018.ttf')}});
+    }
+</style>
 @include('partials.fb-init')
 <!-- Header -->
 <header >

@@ -135,7 +135,6 @@ var social = {
 };
 
 setBackground(data.background_image);
-setTimeout(function() {
     draw(block);
     extra(data.ucl_image);
     draw(lineabove);
@@ -147,6 +146,6 @@ setTimeout(function() {
         write(social);
         addImage(home_crest);
         addImage(away_crest);
-    },100);
+
 },150);
 

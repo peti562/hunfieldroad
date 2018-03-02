@@ -65,6 +65,7 @@ function addImage(obj) {
 function setBackground(source) {
     var bkimg = new Image();
     bkimg.onload = function() {
+        context.setBackground(data.background_image);
         context.drawImage(bkimg, 0, 0, canvas.width, canvas.height);
     };
     bkimg.src = source;
@@ -146,5 +147,5 @@ setTimeout(function() {
         write(social);
         addImage(home_crest);
         addImage(away_crest);
-},1000);
+},2000);
 

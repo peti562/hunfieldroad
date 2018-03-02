@@ -135,7 +135,7 @@ var social = {
     pos: {x: 153, y: 685}
 };
 
-
+setBackground(data.background_image);
 draw(block);
 extra(data.ucl_image);
 draw(lineabove);
@@ -147,4 +147,3 @@ write(social);
 addImage(home_crest);
 addImage(away_crest);
 
-setBackground(data.background_image);

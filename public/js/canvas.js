@@ -65,7 +65,7 @@ function addImage(obj) {
 function setBackground(source) {
     var bkimg = new Image();
     bkimg.onload = function() {
-        context.setBackground(data.background_image);
+        context.globalCompositeOperation='destination-over';
         context.drawImage(bkimg, 0, 0, canvas.width, canvas.height);
     };
     bkimg.src = source;

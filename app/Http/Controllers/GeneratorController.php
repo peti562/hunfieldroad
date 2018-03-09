@@ -52,29 +52,12 @@ class GeneratorController extends Controller
       'ucl_image' => $request['competition']=='ucl' ? url('images/ucl.png') : '',
       ];
 
-    if ($request['home_team']==64)
-    {
-      $data['colors'] = [
-        'block' => '#8a1717',
-        'lineabove' => '#ffffff',
-        'ribbon' => '#ffe400',
-        'result' => '#ffffff',
-        'ribbontext' => '#000000',
-        'social' => '#ffffff',
-      ];
-    } else if ($request['away_team']==64) {
-      $data['colors'] = [
-        'block' => '#373737',
-        'lineabove' => '#ffffff',
-        'ribbon' => '#FB673F',
-        'result' => '#FB673F',
-        'ribbontext' => '#000',
-        'social' => '#FB673F',
-      ];
-    }
-    
-
-
+    $location = $request['location'];
+    $location = 'home';
+    $focus_team = $request[$location.'_team'];
+    $focus_team = '64';
+    $data['colors'] = $this->getColors($focus_team, $location, $club);
+    dump($data['colors']);
     return view('match_image_output', compact('data'));
   }
 
@@ -82,5 +65,17 @@ class GeneratorController extends Controller
        $FDCOUK = $club->team($team)->pluck('FDCOUK')->first();
        return url('result_generator/club_crests/england/'.$FDCOUK.'.svg');
    }
+
+  public function getColors($team, $location, $club){
+    $teamData = $club->team($team)->get();
+    return [
+      'block'      => $teamData[0][$location.'_block'],
+      'lineabove'  => $teamData[0][$location.'_lineabove'],
+      'ribbon'     => $teamData[0][$location.'_ribbon'],
+      'result'     => $teamData[0][$location.'_result'],
+      'ribbontext' => $teamData[0][$location.'_ribbontext'],
+      'social'     => $teamData[0][$location.'_social'],
+    ];
+  }
 
 }

@@ -7,7 +7,7 @@
             <input type="hidden" id="competition" name="competition" value="epl"/>
 
             <div class="col l12 col m12">
-                <label for="home_team">Home Team</label>
+                <label for="home_team">Hazai Csapat</label>
                 <select name="home_team" id="home_team">
                     @foreach($clubs as $club)
                         @if($club->TID == 64)
@@ -27,7 +27,7 @@
             </div>--}}
 
             <div class="col l12 col m12">
-                <label for="away_team">Away Team</label>
+                <label for="away_team">Vendég Csapat</label>
                 <select name="away_team" id="away_team">
                     @foreach($clubs as $club)
                         <option value="{{$club->TID}}" id="away_{{$club->FDCOUK}}" data-content="{{$club->Logo_url}}">{{$club->FDCOUK}}</option>

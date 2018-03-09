@@ -1,6 +1,6 @@
 setTimeout(function() {
     drawCanvas();
-    },50);
+    },500);
 
 function drawCanvas(){
 

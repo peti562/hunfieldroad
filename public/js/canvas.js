@@ -135,20 +135,30 @@ var social = {
     pos: {x: 153, y: 685}
 };
 
-draw(block);
-extra(data.ucl_image);
-draw(lineabove);
-draw(miniribbon);
-draw(bigribbon);
-write(ribbontext);
-setTimeout(function() {
-    write(result);
-    write(social);
-    addImage(home_crest);
-    addImage(away_crest);
-},200);
+new Promise(function(fulfill, reject){
+    draw(block);
+    extra(data.ucl_image);
+    draw(lineabove);
+    draw(miniribbon);
+    draw(bigribbon);
+    write(ribbontext);
+    fulfill(result);
+}).then(function(result){
+    return new Promise(function(fulfill, reject){
+        write(result);
+        write(social);
+        addImage(home_crest);
+        addImage(away_crest);
+        fulfill(result);
+    });
+}).then(function(result){
+    return new Promise(function(fulfill, reject){
+        setBackground(data.background_image);
+        fulfill(result);
+    });
+}).then(function(result){
+    console.log(lineabove);
+});
 
-setTimeout(function() {
-   setBackground(data.background_image);
-},250);
+
 

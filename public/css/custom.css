@@ -1,6 +1,9 @@
 
-
-
+@font-face {
+    font-family: epl-font;
+    src: url(sansation_light.woff);
+}
+/Users/petermakadi/code/homestead/hunfieldroad/public/font/Premier_League_Font_2018.ttf
 
 #hero {
     color:white;

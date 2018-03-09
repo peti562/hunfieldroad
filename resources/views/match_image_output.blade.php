@@ -3,8 +3,9 @@
 <html lang="en">
 <head>
     <title>Hunfield Road</title>
+    <link href="{{asset('css/custom.css')}}" type="text/css" rel="stylesheet">
 </head>
-<body>
+<body style="font-family: epl-font;">
 <div class="col l12 col m12">
     <style>
         @import url({{url('font/Premier_League_Font_2018.ttf')}});
@@ -14,7 +15,7 @@
             src: url({{url('font/Premier_League_Font_2018.ttf')}});
         }
     </style>
-    <span style="font-family: epl-font; visibility: hidden;">.</span>
+    <span style="font: 40px epl-font;">.</span>
     <canvas
             height="700"
             width="1000"

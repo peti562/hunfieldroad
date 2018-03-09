@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Club extends Model
 {
-  public function scopeTeamCrest ($query, $tid) {
+  public function scopeTeam ($query, $tid) {
     return $query->where('TID', $tid);
   }
 }

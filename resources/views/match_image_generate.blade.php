@@ -56,7 +56,7 @@
             </div>
 
 
-            {{Form::label('background_image', 'Háttérkép',['class' => 'control-label'])}}
+            {{Form::label('background_image', 'Háttérkép',['class' => 'control-label', 'required' =>'required'])}}
             {{Form::file('background_image')}}
             {{Form::submit('Uzsgyi!', ['class' => 'btn btn-danger'])}}
         {{Form::close()}}

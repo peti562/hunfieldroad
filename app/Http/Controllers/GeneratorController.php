@@ -16,24 +16,29 @@ class GeneratorController extends Controller
 
   public function generateResult(Club $club, Request $request)
   {
-    $this->validate($request, [
+    /*$this->validate($request, [
       'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    ]);
+    ]);*/
 
-    $image = $request->file('background_image');
+    if ($request->file())
+    {
+      $image = $request->file('background_image');
 
-    $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+      $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
 
-    $destinationPath = public_path('/images/match_result_images');
+      $destinationPath = public_path('/images/match_result_images');
 
-    $image->move($destinationPath, $input['imagename']);
+      $image->move($destinationPath, $input['imagename']);
 
-    $imageURL = url('images/match_result_images/'.$input['imagename']);
+      $imageURL = url('images/match_result_images/'.$input['imagename']);
+    } else {
+      $imageURL = 'https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/58/thumb_57208_default_news_size_5.jpeg';
+    }
 
 
 
-    $home_team_crest = $club->teamCrest($request['home_team'])->pluck('Logo_url')->first();
-    $away_team_crest = $club->teamCrest($request['away_team'])->pluck('Logo_url')->first();
+    $home_team_crest = $this->crestUrl($request['home_team'], $club);
+    $away_team_crest = $this->crestUrl($request['away_team'], $club);
 
     $data = [
       'competition' => $request['competition'],
@@ -73,5 +78,10 @@ class GeneratorController extends Controller
     return view('match_image_output', compact('data'));
   }
 
+   public function crestUrl($team, $club){
+       $teamName = $club->team($team)->pluck('FDCOUK')->first();
+       dump(url('result_generator/club_crests/england/'.$teamName.'.svg'));
+       return url('result_generator/club_crests/england/'.$teamName.'.svg');
+   }
 
 }

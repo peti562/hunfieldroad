@@ -79,8 +79,8 @@ class GeneratorController extends Controller
   }
 
    public function crestUrl($team, $club){
-       $teamName = $club->team($team)->pluck('FDCOUK')->first();
-       return url('result_generator/club_crests/england/'.$teamName.'.svg');
+       $FDCOUK = $club->team($team)->pluck('FDCOUK')->first();
+       return url('result_generator/club_crests/england/'.$FDCOUK.'.svg');
    }
 
 }

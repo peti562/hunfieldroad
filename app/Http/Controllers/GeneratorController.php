@@ -35,7 +35,11 @@ class GeneratorController extends Controller
       $imageURL = 'https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/58/thumb_57208_default_news_size_5.jpeg';
     }
 
-
+    if ($request['home_team'] != 64 && $request['away_team'] != 64)
+    {
+      dump('hello');
+      return redirect()->route('generating');
+    }
 
     $home_team_crest = $this->crestUrl($request['home_team'], $club);
     $away_team_crest = $this->crestUrl($request['away_team'], $club);
@@ -52,17 +56,15 @@ class GeneratorController extends Controller
       'ucl_image' => $request['competition']=='ucl' ? url('images/ucl.png') : '',
       ];
 
-    $location = $request['location'];
-    $location = 'home';
-    $focus_team = $request[$location.'_team'];
+    $location = $request['home_team'] == 64 ? 'home' : 'away';
     $focus_team = '64';
     $data['colors'] = $this->getColors($focus_team, $location, $club);
-    dump($data['colors']);
     return view('match_image_output', compact('data'));
   }
 
    public function crestUrl($team, $club){
        $FDCOUK = $club->team($team)->pluck('FDCOUK')->first();
+       //dump(url('result_generator/club_crests/england/'.$FDCOUK.'.svg'));
        return url('result_generator/club_crests/england/'.$FDCOUK.'.svg');
    }
 

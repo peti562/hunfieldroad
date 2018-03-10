@@ -72,8 +72,10 @@ function drawCanvas(){
     function setBackground(source) {
         var bkimg = new Image();
         bkimg.onload = function() {
+            var aspect_ratio = bkimg.width / bkimg.height;
+            var newHeight = canvas.width/aspect_ratio;
             context.globalCompositeOperation='destination-over';
-            context.drawImage(bkimg, 0, 0, canvas.width, canvas.height);
+            context.drawImage(bkimg, 0, 0, canvas.width, newHeight);
         };
         bkimg.src = source;
     }
@@ -153,7 +155,6 @@ function drawCanvas(){
         return new Promise(function(fulfill, reject){
             write(result);
             write(social);
-            console.log(away_crest);
             addImage(home_crest);
             addImage(away_crest);
             fulfill(result);

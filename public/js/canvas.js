@@ -141,7 +141,6 @@ function drawCanvas(){
         text: 'HUNFIELD ROAD',
         pos: {x: 153, y: 685}
     };
-
     new Promise(function(fulfill, reject){
         draw(block);
         extra(data.ucl_image);
@@ -154,6 +153,7 @@ function drawCanvas(){
         return new Promise(function(fulfill, reject){
             write(result);
             write(social);
+            console.log(away_crest);
             addImage(home_crest);
             addImage(away_crest);
             fulfill(result);

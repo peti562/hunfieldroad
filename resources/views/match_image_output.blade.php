@@ -15,7 +15,7 @@
             src: url({{url('font/Premier_League_Font_2018.ttf')}});
         }
     </style>
-    <span style="font: 40px epl-font;">VALAMI.</span>
+    <span style="font: 40px epl-font;">.</span>
     <canvas
             height="700"
             width="1000"

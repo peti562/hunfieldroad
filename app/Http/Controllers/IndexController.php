@@ -12,14 +12,5 @@ class IndexController extends Controller
     return view('layouts.home.main-page');
   }
 
-  public function fbsend()
-  {
-    SendTo::Facebook(
-      'link',
-      [
-        'link' => 'https://test',
-        'message' => 'test'
-      ]
-    );
-  }
+  
 }

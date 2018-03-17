@@ -6,7 +6,7 @@
         <li>
             <!-- News Slider Image -->
             <div>
-                <img src="{{env('APP_URL').'/storage/'.$recentPost->image}}" alt="News Slider 1" style="height:100%">
+                {{--<img src="{{env('APP_URL').'/storage/'.$recentPost->image}}" alt="News Slider 1" style="height:100%">--}}
             </div>
                 <!-- News Slider Content -->
             <div class="news-content">

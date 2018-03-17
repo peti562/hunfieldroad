@@ -10,9 +10,9 @@
             </div>
                 <!-- News Slider Content -->
             <div class="news-content">
-                {{--<div class="news-time"><small>{{$recentPost->created_at->diffForHumans()}}</small></div>--}}
-                {{--<div class="news-title big"><h2> <a href="{{env('APP_URL').'posts/'.$recentPost->id}}">{{$recentPost->title}}</a> </h2></div>
-                <p class="news-detail">{{$recentPost->excerpt}} </p>--}}
+                <div class="news-time"><small>{{$recentPost->created_at->diffForHumans()}}</small></div>
+                <div class="news-title big"><h2> <a href="{{env('APP_URL').'posts/'.$recentPost->id}}">{{$recentPost->title}}</a> </h2></div>
+                <p class="news-detail">{{$recentPost->excerpt}} </p>
             </div>
         </li>
         @endforeach

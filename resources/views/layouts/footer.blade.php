@@ -53,5 +53,6 @@
 
 <!-- Custom Js -->
 <script src="{{asset('js/init.js')}}"></script>
+{{--@include('partials.google-analytics');--}}
 </body>
 </html>

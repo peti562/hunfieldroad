@@ -5,6 +5,7 @@
         {{Form::open(['route' => 'generator', 'files' => true])}}
             {{ csrf_field() }}
             <input type="hidden" id="competition" name="competition" value="epl"/>
+            <input type="hidden" id="template_id" name="template_id" value="1"/>
 
             <div class="col l12 col m12">
                 <label for="home_team">Hazai Csapat</label>

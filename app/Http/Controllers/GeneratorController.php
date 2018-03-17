@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Club;
+use App\template;
 use Illuminate\Http\Request;
 
 class GeneratorController extends Controller
@@ -14,7 +15,7 @@ class GeneratorController extends Controller
   }
 
 
-  public function generateResult(Club $club, Request $request)
+  public function generateResult(Club $club, Request $request, Template $template)
   {
     /*$this->validate($request, [
       'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -54,12 +55,24 @@ class GeneratorController extends Controller
       'home_team_goals' => $request['home_team_goals'],
       'background_image' => $imageURL,
       'ucl_image' => $request['competition']=='ucl' ? url('images/ucl.png') : '',
+      'template' => $this->template($request['template_id'], $template),
       ];
 
     $location = $request['home_team'] == 64 ? 'home' : 'away';
     $focus_team = '64';
     $data['colors'] = $this->getColors($focus_team, $location, $club);
+   // dd($data['template']);
     return view('match_image_output', compact('data'));
+  }
+
+  public function template($template_id, $template) {
+    $elements = $template->getTemplate($template_id)->get();
+    $templateData=[];
+    foreach($elements as $element){
+      $templateData[$element['object_name']][$element['point']]['x'] = $element['x'];
+      $templateData[$element['object_name']][$element['point']]['y'] = $element['y'];
+    }
+    return $templateData;
   }
 
    public function crestUrl($team, $club){

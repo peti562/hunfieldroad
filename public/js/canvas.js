@@ -81,14 +81,7 @@ function drawCanvas(){
     }
 
 
-
-    var block = {
-        a: { x:0,    y:448 },
-        b: { x:1000, y:336 },
-        c: { x:1000, y:700 },
-        d: { x:0,    y:700 },
-        color: data.colors.block
-    };
+    
 
     var lineabove = {
         a: { x:0,    y:441 },
@@ -144,7 +137,7 @@ function drawCanvas(){
         pos: {x: 153, y: 685}
     };
     new Promise(function(fulfill, reject){
-        draw(block);
+        draw(data.template.block);
         extra(data.ucl_image);
         draw(lineabove);
         draw(miniribbon);

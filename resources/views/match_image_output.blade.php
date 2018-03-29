@@ -37,36 +37,6 @@
             result: '{{$data['colors']['result']}}',
             ribbontext: '{{$data['colors']['ribbontext']}}',
             social: '{{$data['colors']['social']}}'
-        },
-        template:{
-            block : {
-                a: { x:{{$data['template']['block']['a']['x']}},    y:{{$data['template']['block']['a']['y']}} },
-                b: { x:{{$data['template']['block']['b']['x']}}, y:{{$data['template']['block']['b']['y']}} },
-                c: { x:{{$data['template']['block']['c']['x']}}, y:{{$data['template']['block']['c']['y']}} },
-                d: { x:{{$data['template']['block']['d']['x']}},    y:{{$data['template']['block']['d']['y']}} },
-                color: data.colors.block
-            },
-            lineabove : {
-                a: { x:0,    y:441 },
-                b: { x:1000, y:329 },
-                c: { x:1000, y:346 },
-                d: { x:0,    y:458 },
-                color: data.colors.lineabove
-            },
-            miniribbon : {
-                a: { x:0,   y:463 },
-                b: { x:285, y:431 },
-                c: { x:285, y:435 },
-                d: { x:0,   y:467 },
-                color: data.colors.ribbon
-            },
-            bigribbon : {
-                a: { x:500,   y:350 },
-                b: { x:1000,  y:295 },
-                c: { x:1000,  y:375 },
-                d: { x:510,   y:430 },
-                color: data.colors.ribbon
-            }
         }
 
     };

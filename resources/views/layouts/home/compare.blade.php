@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.index')
 
-@section('main-content')
+@section('content')
     <div class="row">
         <form action="{{env('APP_URL')}}comparing" method="GET">
             <div class="col l6 col m12">

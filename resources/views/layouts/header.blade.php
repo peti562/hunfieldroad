@@ -171,16 +171,3 @@
     <li class="waves-effect"><a href="contact2.html"><i class="fa fa-map-marker"></i>Contact Style 2</a></li>
     <li class="waves-effect"><a href="login.html"><i class="fa fa-lock"></i>Login</a></li>
 </ul>
-
-<!-- Main Wrapper -->
-<div class="outside" style="width:1000px; margin:auto;">
-    <div class="wrapper" >
-        <div class="container">
-
-            @yield('main-content')
-
-        </div>
-    </div>
-</div>
-
-@include('layouts.footer')

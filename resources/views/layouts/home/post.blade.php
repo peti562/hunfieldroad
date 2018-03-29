@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.index')
 
-@section('main-content')
+@section('content')
     <div class="row">
         <div class="col l8 col m12">
             <!-- News Single Style 3 -->

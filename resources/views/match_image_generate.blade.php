@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.index')
 
-@section('main-content')
+@section('content')
     <div class="row" style="background: white;">
         {{Form::open(['route' => 'generator', 'files' => true])}}
             {{ csrf_field() }}

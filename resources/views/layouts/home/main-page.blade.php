@@ -1,6 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.index')
 
-@section('main-content')
+@section('content')
     <div class="row">
         @include('layouts.home.news_slider')
 

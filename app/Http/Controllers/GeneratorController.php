@@ -62,7 +62,7 @@ class GeneratorController extends Controller
     $focus_team = '64';
     $data['colors'] = $this->getColors($focus_team, $location, $club);
    // dd($data['template']);
-    return view('match_image_output', compact('data'));
+    return view('result_generator.match_image_output', compact('data'));
   }
 
   public function template($template_id, $template) {

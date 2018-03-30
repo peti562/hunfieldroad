@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Post;
 use App\Quote;
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
       view()->composer('partials.random-quotes', function($view) {
         $view->with('quote', Quote::inRandomOrder()->first());
       });
+      Carbon::setLocale('hu');
 
     }
 

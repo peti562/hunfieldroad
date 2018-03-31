@@ -22,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
       view()->composer('layouts.home.main-page', function($view) {
         $view->with('recentPosts', Post::afterSlider(3,20));
       });
+      view()->composer('layouts.home.main-page', function($view) {
+        $view->with('recentPostsMobile', Post::recents());
+      });
       view()->composer('layouts.home.news_slider', function($view) {
         $view->with('recentPosts', Post::recents());
       });

@@ -102,6 +102,18 @@
 .pgwSliderMobile {
     display:none;
 }
+.outside{
+    width:1000px;
+    margin:auto;
+}
+
+.news-image-horizontal-block{
+    margin-top: 10px;
+    width:100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
 
 @media only screen and (max-width:400px){
     .pgwSliderMobile {
@@ -109,5 +121,8 @@
     }
     .pgwSlider {
         display:none;
+    }
+    .outside{
+        width:100%;
     }
 }

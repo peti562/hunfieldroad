@@ -1,6 +1,6 @@
 @include('layouts.header')
 <!-- Main Wrapper -->
-<div class="outside" style="width:1000px; margin:auto;">
+<div class="outside">
     <div class="wrapper" >
         <div class="container">
 

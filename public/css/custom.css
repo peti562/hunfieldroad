@@ -115,6 +115,10 @@
     background-position: center;
 }
 
+.mini-table-wrap{
+    background: white;
+}
+
 
 
 @media only screen and (max-width:600px){
@@ -126,5 +130,22 @@
     }
     .outside{
         width:100%;
+    }
+    body{
+        background-color: #9d141d;
+    }
+    .wrapper{
+        background-color: #9d141d;
+    }
+    .mini-table-wrap{
+        margin:15px 0;
+        border-top: 5px solid white;
+    }
+    footer.page-footer{
+        margin:0;
+    }
+    header{
+        border-bottom: 10px solid white;
+        box-shadow: 0 0 100px gray !important;
     }
 }

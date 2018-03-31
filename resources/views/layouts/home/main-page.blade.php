@@ -37,7 +37,7 @@
 
 
         <div class="row">
-            <div class="col l9 col m12 col s12 no-padding" style="background: white;">
+            <div class="col l9 col m12 col s12 no-padding mini-table-wrap">
                 @include('partials.mini-table')
             </div>
 

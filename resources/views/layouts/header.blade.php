@@ -65,42 +65,6 @@
     </div>
 
     <!-- Header top Display On Mobile -->
-    <div class="header hide-on-med-and-up">
-        <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col l4 col m5 col s2">
-                        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                    </div>
-                    <div class="col l4 col m4 col s5">
-                        <!-- Dropdown -->
-                        <div class="header-dropdown">
-                            <!-- Dropdown Trigger -->
-                            <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown-mobile'>Today <i class="mdi-navigation-arrow-drop-down"></i></a>
-                            <!-- Dropdown Structure -->
-                            <ul id='dropdown-mobile' class='dropdown-content'>
-                                <li><a href="javascript:void(0);">Today</a></li>
-                                <li><a href="javascript:void(0);">Yesterday</a></li>
-                                <li><a href="javascript:void(0);">1 Week</a></li>
-                                <li><a href="javascript:void(0);">1 Month</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col l4 col m4 col s3">
-                        <!-- LogIn Link -->
-                        <a href="login.html" class="login">Login</a>
-                    </div>
-                    <div class="col l4 col m4 col s2">
-                        <!-- Search Button -->
-                        <form class="searchbox">
-                            <input type="text" placeholder="Type and Press Enter" name="search" class="searchbox-input" required>
-                            <input type="submit" class="searchbox-submit">
-                            <span class="searchbox-icon"><i class="mdi-action-search"></i></span>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="bottom-header">
             <div class="container">
                 <div class="row">

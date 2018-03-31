@@ -498,7 +498,7 @@ footer.page-footer .footer-copyright{
   z-index: 99;
 }
 .footer-button .mdi-action-history:hover{
-  background-color: #2f3e9b;
+  background-color: #9f1117;
   color: #fff;
   transition-duration: 0.3s;
   -webkit-transition-duration: 0.3s;
@@ -620,7 +620,7 @@ ul.pgwSlider > li span, .pgwSlider > .ps-list > li span
   margin-bottom: 15px;
   line-height: normal;
 }
-.news-title  a:hover{ color: #2f3e9b;}
+.news-title  a:hover{ color: #9f1117;}
 .news-title.large-font > a { font-size: 32px; line-height: 38px; }
 .news-content p { color: #8b8b8b; font-size: 14px; }
 
@@ -828,7 +828,7 @@ ul.pgwSlider > li span, .pgwSlider > .ps-list > li span
 .news-single .news-time{ font-size: 14px; margin: 50px 0 50px 0;}
 .news-single .news-time .fa{ padding-left: 30px;}
 .news-single .btn-floating {
-  background: none repeat scroll 0 0 #2f3e9b;
+  background: none repeat scroll 0 0 #9f1117;
   float: right;
   height: 70px;
   line-height: 80px;
@@ -858,7 +858,7 @@ ul.pgwSlider > li span, .pgwSlider > .ps-list > li span
 }
 .client-box .social-icon .fa:hover { color: #ff4181; }
 .all-post {color: #444; font-size: 13px; text-transform: uppercase; }
-.all-post:hover {color:#2f3e9b; }
+.all-post:hover {color:#9f1117; }
 .news-single.style-2 .news-title { font-size: 24px; }
 
 /**************** 8.1 Image Background News ********************/
@@ -1297,7 +1297,7 @@ ul.pgwSlider > li span, .pgwSlider > .ps-list > li span
   margin-left: 5px;
 }
 .profile-sidebar .social-icon .fa{ line-height: normal;}
-.profile-sidebar .social-icon .fa:hover{ color: #2f3e9b;}
+.profile-sidebar .social-icon .fa:hover{ color: #9f1117;}
 .profile-sidebar .social-icon { padding: 20px 0 0; text-align: center; }
 
 /******************* 14.1 Profile Box **********************/
@@ -1467,8 +1467,8 @@ iframe { width: 100%; border: none; }
 
 @media (min-width:320px) and (max-width: 600px)
 {
-header{ height: auto; background: #2f3e9b; }
-header.header-fix{ background: #2f3e9b !important; }
+header{ height: auto; background: #9f1117; }
+header.header-fix{ background: #9f1117 !important; }
 .top-header {
   overflow: hidden;
   transition-duration: 0.5s;

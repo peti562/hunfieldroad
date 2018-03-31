@@ -115,13 +115,9 @@
     background-position: center;
 }
 
-@media only screen and (max-width:600px) {
-    .header {
-        background: #9f1117 !important;
-    }
-}
 
-@media only screen and (max-width:400px){
+
+@media only screen and (max-width:600px){
     .pgwSliderMobile {
         display:block;
     }

@@ -98,3 +98,16 @@
     font-style: italic;
     color: #7c0006;
 }
+
+.pgwSliderMobile {
+    display:none;
+}
+
+@media only screen and (max-width:400px){
+    .pgwSliderMobile {
+        display:block;
+    }
+    .pgwSlider {
+        display:none;
+    }
+}

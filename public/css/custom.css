@@ -146,6 +146,6 @@
     }
     header{
         border-bottom: 10px solid white;
-        box-shadow: 0 0 100px gray !important;
+        box-shadow: 0 0 40px #333 !important;
     }
 }

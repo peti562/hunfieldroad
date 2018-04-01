@@ -29,6 +29,7 @@ function drawCanvas(){
 
     function extra(source) {
         var bkimg = new Image();
+        bkimg.crossOrigin = 'anonymous';
         bkimg.onload = function() {
             context.drawImage(bkimg, 0, 420);
         };
@@ -56,6 +57,7 @@ function drawCanvas(){
 
     function addImage(obj) {
         var img = new Image();
+        img.crossOrigin = 'anonymous';
         img.onload = function() {
             var aspect_ratio = img.width / img.height;
             var newHeight = obj.width/aspect_ratio;
@@ -67,6 +69,7 @@ function drawCanvas(){
 
     function setBackground(source) {
         var bkimg = new Image();
+        bkimg.crossOrigin = 'anonymous';
         bkimg.onload = function() {
             var aspect_ratio = bkimg.width / bkimg.height;
             var newHeight = canvas.width/aspect_ratio;
@@ -163,3 +166,21 @@ function drawCanvas(){
         console.log(lineabove);
     });
 };
+
+function savingTheCanvas(){
+    // Generate the image data
+    var pic = document.getElementById("canvas").toDataURL("image/png");
+    pic = pic.replace(/^data:image\/(png|jpg);base64,/, "");
+    console.log(pic);
+    // Sending the image data to Server
+   /* $.ajax({
+        type: 'POST',
+        url: 'hunfieldroad/UploadPic',
+        data: '{ "imageData" : "' + pic + '" }',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success: function (msg) {
+            alert("Done, Picture Uploaded.");
+        }
+    });*/
+}

@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class GeneratorController extends Controller
 {
-  public function clubs(Club $club){
+  public function final_result_input(Club $club){
     $clubs = $club->get();
 
     return view('result_generator.match_image_generate', compact('clubs'));
   }
 
 
-  public function generateResult(Club $club, Request $request, Template $template)
+  public function final_result_output(Club $club, Request $request, Template $template)
   {
     /*$this->validate($request, [
       'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',

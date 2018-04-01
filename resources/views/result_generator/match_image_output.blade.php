@@ -22,6 +22,8 @@
             id="canvas"></canvas>
 </div>
 
+<button onclick="savingTheCanvas()">SAVE</button>
+
 <script>
     var data = {
         background_image: '{{$data['background_image']}}',

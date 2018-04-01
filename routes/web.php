@@ -27,8 +27,8 @@ Route::get('/try', 'PageController@compare');
 
 Route::get('/comparing', 'PageController@compareWithTeams');
 
-Route::get('/generating', ['as' => 'generating', 'uses' => 'GeneratorController@clubs']);
+/*Route::get('/generating', ['as' => 'generating', 'uses' => 'GeneratorController@clubs']);*/
 
-Route::get('/generator', ['as' => 'generator', 'uses' => 'GeneratorController@generateResult']);
+Route::get('/generator', ['as' => 'generator', 'uses' => 'GeneratorController@final_result_output']);
 
 Route::post('/generator', 'GeneratorController@generateResult');

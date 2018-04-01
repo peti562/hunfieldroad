@@ -6,10 +6,6 @@ function drawCanvas(){
 
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
-
-
-
-
     var home_goals = data.home_goals;
     var away_goals = data.away_goals;
     var multiply = 1;
@@ -166,6 +162,4 @@ function drawCanvas(){
     }).then(function(result){
         console.log(lineabove);
     });
-
-
 };

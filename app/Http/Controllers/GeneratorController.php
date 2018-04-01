@@ -11,7 +11,7 @@ class GeneratorController extends Controller
   public function clubs(Club $club){
     $clubs = $club->get();
 
-    return view('match_image_generate', compact('clubs'));
+    return view('result_generator.match_image_generate', compact('clubs'));
   }
 
 
@@ -36,31 +36,41 @@ class GeneratorController extends Controller
       $imageURL = 'https://d3j2s6hdd6a7rg.cloudfront.net/v2/uploads/media/default/0001/58/thumb_57208_default_news_size_5.jpeg';
     }
 
-    if ($request['home_team'] != 64 && $request['away_team'] != 64)
-    {
-      dump('hello');
-      return redirect()->route('generating');
-    }
 
-    $home_team_crest = $this->crestUrl($request['home_team'], $club);
-    $away_team_crest = $this->crestUrl($request['away_team'], $club);
+    $home = $request['location'] == 'home';
+    $liverpool = '64';
+
+    $home_team = [
+      'name' => $home ? $liverpool : $request['team_b'],
+      'goals' => $home ? $request['team_a_goals'] : $request['team_b_goals']
+    ];
+    $away_team = [
+      'name' => $home ? $request['team_b'] : $liverpool,
+      'goals' => $home ? $request['team_b_goals'] : $request['team_a_goals']
+    ];
+
+
+
+    $home_team_crest = $this->crestUrl($home_team['name'], $club);
+    $away_team_crest = $this->crestUrl($away_team['name'], $club);
 
     $data = [
       'competition' => $request['competition'],
-      'home_team' => $request['home_team'],
+      'home_team' => $home_team['name'],
       'home_team_crest' => $home_team_crest,
-      'away_team' => $request['away_team'],
+      'home_team_goals' => $home_team['goals'],
+      'away_team' => $away_team['name'],
       'away_team_crest' => $away_team_crest,
-      'away_team_goals' => $request['away_team_goals'],
-      'home_team_goals' => $request['home_team_goals'],
+      'away_team_goals' => $away_team['goals'],
       'background_image' => $imageURL,
       'ucl_image' => $request['competition']=='ucl' ? url('images/ucl.png') : '',
-      'template' => $this->template($request['template_id'], $template),
+      /*'template' => $this->template($request['template_id'], $template),*/
       ];
 
-    $location = $request['home_team'] == 64 ? 'home' : 'away';
+    $location = $request['location'];
     $focus_team = '64';
     $data['colors'] = $this->getColors($focus_team, $location, $club);
+
    // dd($data['template']);
     return view('result_generator.match_image_output', compact('data'));
   }

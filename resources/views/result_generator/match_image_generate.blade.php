@@ -1,7 +1,8 @@
-@extends('layouts.index')
+{{--@extends('layouts.index')--}}
+@extends ('voyager::master')
 
 @section('content')
-    <div class="row" style="background: white;">
+    <div class="s">
         {{Form::open(['route' => 'generator', 'files' => true])}}
             {{ csrf_field() }}
             <input type="hidden" id="competition" name="competition" value="epl"/>

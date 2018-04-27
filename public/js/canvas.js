@@ -2,7 +2,7 @@ setTimeout(function() {
     drawCanvas();
     },500);
 
-function drawCanvas(){
+function drawCanvas(match_data){
 
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');

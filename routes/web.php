@@ -32,3 +32,12 @@ Route::get('/comparing', 'PageController@compareWithTeams');
 Route::get('/generator', ['as' => 'generator', 'uses' => 'GeneratorController@final_result_output']);
 
 Route::post('/generator', 'GeneratorController@final_result_output');
+
+
+Route::get('/gooten', 'GootenController@index');
+Route::get('/gooten/getProducts',['as' => 'getProducts', 'uses' => 'GootenController@getProducts']);
+Route::get('/gooten/getProductVariants/{product_id}',['as' => 'getVariants', 'uses' => 'GootenController@getProductVariants']);
+
+Route::get('/gooten/getShipment',['as' => 'getShipment', 'uses' => 'GootenController@getShipment']);
+
+Route::get('/gooten/cartItems',['as' => 'cartItems', 'uses' => 'GootenController@cartItems']);
